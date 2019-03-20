@@ -222,7 +222,12 @@ public class CalculatorGUI extends JFrame {
                     display.setText(null);
                     display.setText("");
                 }
-            } catch (Exception e) {
+            }
+            catch (ArithmeticException e) {
+                JOptionPane.showMessageDialog(null, "Введите корректное выражение\n" + e.getMessage());
+            }
+
+            catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Введите корректное выражение");
             }
         }

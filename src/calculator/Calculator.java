@@ -62,6 +62,7 @@ public class Calculator {
                     case '*': stack.push(stack.pop()*stack.pop()); break;
                     case '/': {
                         double a = stack.pop(), b = stack.pop();
+                        if (a == 0) throw new ArithmeticException("Деление на ноль");
                         stack.push(b/a); break;
                     }
                     case '+': stack.push(stack.pop()+stack.pop()); break;
